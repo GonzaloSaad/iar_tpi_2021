@@ -8,7 +8,6 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: name-tests-test
-        exclude: (tests/mocks/*|tests/e2e/fixture/*|tests/e2e/functional/schemas/.*_schemas.py)
       - id: requirements-txt-fixer
       - id: trailing-whitespace
   - repo: https://github.com/pre-commit/mirrors-yapf
