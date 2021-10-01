@@ -1,3 +1,5 @@
+import time
+
 import numpy as np
 from sklearn.metrics import accuracy_score
 
@@ -7,7 +9,11 @@ from src.classifier import Classifier
 _train_ratio = 0.8
 
 if __name__ == '__main__':
+    start = time.time()
     steps = 40
+    c = 500
+    lr = 0.01
+    kernel = kernels.laplace_rbf
 
     ###########################
     # Data Set Load
@@ -25,9 +31,11 @@ if __name__ == '__main__':
     ###########################
     # Training
     ###########################
-    classifier = Classifier(c=500, lr=0.01, steps=steps, kernel=kernels.laplace_rbf)
+    classifier = Classifier(c=c, lr=lr, steps=steps, kernel=kernel)
     classifier.fit(x_train, y_train)
 
+    end = time.time()
+    print(end - start)
     ###########################
     # Cross Check
     ###########################
